@@ -18,8 +18,8 @@ impl Component for Root {
 
   fn view(&self, _ctx: &Context<Self>) -> Html {
     html! {
-      <div class="grid h-screen w-screen bg-black">
-
+      <div class="flex justify-center items-center h-screen w-screen bg-gray-900">
+        <p class="text-white text-3xl font-signika">{ "Coming soon. 🌴" }</p>
       </div>
     }
   }
