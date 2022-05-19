@@ -1,6 +1,7 @@
 /target
 
-/pkg
+/pkg/*
+/dist/*
 /node_modules
 
 *.log
