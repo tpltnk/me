@@ -1,0 +1,33 @@
+FROM rust:latest
+
+RUN apt-get install -y curl
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update
+RUN apt-get install -y yarn
+
+RUN apt-get install -y libssl-dev
+
+WORKDIR /opt
+
+COPY . /opt
+
+RUN rustup target add wasm32-unknown-unknown
+RUN cargo install wasm-pack
+
+RUN yarn global add wasm-pack
+RUN yarn global add webpack
+
+RUN wasm-pack --version
+
+RUN cargo build --release
+
+RUN yarn install
+RUN yarn build:dev
+
+
+EXPOSE 8000
+
+ENTRYPOINT yarn dev

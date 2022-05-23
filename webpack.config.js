@@ -9,6 +9,7 @@ module.exports = (env, argv) => {
   return {
     devServer: {
       contentBase: distPath,
+      host: '0.0.0.0',
       compress: argv.mode === 'production',
       port: 8000
     },
@@ -46,6 +47,6 @@ module.exports = (env, argv) => {
         extraArgs: "--no-typescript",
       })
     ],
-    watch: argv.mode !== 'production'
+    // watch: argv.mode !== 'production'
   };
 };
