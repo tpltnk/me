@@ -18,8 +18,37 @@ impl Component for Root {
 
   fn view(&self, _ctx: &Context<Self>) -> Html {
     html! {
-      <div class="flex justify-center items-center h-screen w-screen bg-gray-900">
-        <p class="text-white text-3xl font-signika">{ "Coming soon. 🌴" }</p>
+      <div class="grid grid-rows-3 h-screen w-screen bg-gray-900">
+        <div class="flex h-[1fr] w-screen"></div>
+        <div class="flex justify-center items-center h-full w-screen">
+          <p class="text-white text-3xl font-signika">{ "In development. 🌴" }</p>
+        </div>
+        <div class="flex flex-row mt-auto justify-between items-center p-7 h-[1fr] w-screen">
+          <div class="flex flex-row gap-2">
+            <a class="text-white" href="https://github.com/tpltnk">
+              <span class="fa-xl fa-brands fa-github-square"></span>
+            </a>
+            /*
+            <a class="text-white" href="https://tpltnk.github.io/blog">
+              <span class="fa-xl fa-solid fa-square-rss"></span>
+            </a>
+            */
+            <a class="text-white" href="https://www.youtube.com/channel/UCbu4FIogkvz4UbQ0VjWo7LQ">
+              <span class="fa-xl fa-brands fa-youtube-square"></span>
+            </a>
+          </div>
+          <div class="flex flex-row gap-2">
+            <a class="text-white" href="https://discordapp.com/users/978319857307230248">
+              <span class="fa-xl fa-brands fa-discord"></span>
+            </a>
+            <a class="text-white" href="https://reddit.com/user/kenpaicat">
+              <span class="fa-xl fa-brands fa-reddit-square"></span>
+            </a>
+            <a class="text-white" href="https://twitter.com/tpltnk">
+              <span class="fa-xl fa-brands fa-twitter-square"></span>
+            </a>
+          </div>
+        </div>
       </div>
     }
   }
