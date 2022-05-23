@@ -15,19 +15,14 @@ WORKDIR /opt
 COPY . /opt
 
 RUN rustup target add wasm32-unknown-unknown
-RUN cargo install wasm-pack
 
 RUN yarn global add wasm-pack
 RUN yarn global add webpack
 
-RUN wasm-pack --version
-
-RUN cargo build --release
-
 RUN yarn install
-RUN yarn build:dev
+RUN yarn build
 
 
 EXPOSE 8000
 
-ENTRYPOINT yarn dev
+ENTRYPOINT yarn run
