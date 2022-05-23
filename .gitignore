@@ -1,7 +1,9 @@
 /target
 
 /pkg
+
 /dist
+!/dist/.gitkeep
 
 /node_modules
 
