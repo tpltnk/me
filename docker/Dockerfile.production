@@ -17,11 +17,6 @@ RUN yarn global add webpack
 
 RUN yarn install
 
-EXPOSE 8000
-
-HEALTHCHECK --interval=20s \
-  --timeout=5s \
-  --retries=3 \
-  CMD curl -f http://0.0.0.0:8000 || exit 1
+EXPOSE 80
 
 ENTRYPOINT yarn prod

@@ -9,9 +9,9 @@ module.exports = (env, argv) => {
   return {
     devServer: {
       contentBase: distPath,
-      host: '0.0.0.0',
+      disableHostCheck: true,
+      port: 8000,
       compress: argv.mode === 'production',
-      port: 8000
     },
     experiments: {
       syncWebAssembly: true,
