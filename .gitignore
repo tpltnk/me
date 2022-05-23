@@ -1,6 +1,7 @@
 /target
 
-/pkg
+/pkg/*
+!/pkg/.gitkeep
 
 /dist/*
 !/dist/.gitkeep
