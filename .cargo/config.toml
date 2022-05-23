@@ -4,5 +4,5 @@
 # To determine if mold has been used for linking use:
 # `readelf -p .comment target/debug/yail`
 [target.x86_64-unknown-linux-gnu]
-linker = "clang"
+linker = "clang-13"
 rustflags = ["-C", "link-arg=--ld-path=/usr/bin/mold"]
