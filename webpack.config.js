@@ -10,6 +10,7 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: distPath,
       disableHostCheck: true,
+      host: '0.0.0.0',
       port: 8000,
       compress: argv.mode === 'production',
     },
@@ -20,8 +21,8 @@ module.exports = (env, argv) => {
     entry: './bootstrap.js',
     output: {
       path: distPath,
-      filename: "portfolio.js",
-      webassemblyModuleFilename: "portfolio.wasm"
+      filename: "me.js",
+      webassemblyModuleFilename: "me.wasm"
     },
     module: {
       rules: [
