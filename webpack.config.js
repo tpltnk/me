@@ -47,6 +47,6 @@ module.exports = (env, argv) => {
         extraArgs: "--no-typescript",
       })
     ],
-    watch: argv.mode !== 'production'
+    watch: argv.mode === 'development'
   };
 };

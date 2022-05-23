@@ -8,13 +8,11 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update
 RUN apt-get install -y yarn
 
-RUN apt-get install -y libssl-dev
-
 WORKDIR /opt
 
 COPY . /opt
 
-RUN rustup target add wasm32-unknown-unknown
+# RUN rustup target add wasm32-unknown-unknown
 
 RUN yarn global add wasm-pack
 RUN yarn global add webpack
@@ -22,7 +20,11 @@ RUN yarn global add webpack
 RUN yarn install
 RUN yarn build
 
-
 EXPOSE 8000
 
-ENTRYPOINT yarn run
+HEALTHCHECK --interval=20s \
+  --timeout=5s \
+  --retries=3 \
+  CMD curl -f http://0.0.0.0:8000 || exit 1
+
+ENTRYPOINT yarn prod
