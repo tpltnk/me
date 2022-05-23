@@ -12,13 +12,10 @@ WORKDIR /opt
 
 COPY . /opt
 
-# RUN rustup target add wasm32-unknown-unknown
-
 RUN yarn global add wasm-pack
 RUN yarn global add webpack
 
 RUN yarn install
-RUN yarn build
 
 EXPOSE 8000
 

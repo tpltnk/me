@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --open",
     "prod": "webpack-dev-server --mode=production",
+    "development": "webpack-dev-server --mode=development --open",
+    "production": "webpack-dev-server --mode=production",
     "build": "webpack --mode=production",
     "build:dev": "webpack --mode=development"
   },
