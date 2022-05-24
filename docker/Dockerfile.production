@@ -34,18 +34,15 @@ FROM rust:latest
 RUN apt-get update
 
 # This batch of commands installs llvm.sh dependencies.
-RUN apt-get install -y --no-install-recommends lsb-release
-RUN apt-get install -y --no-install-recommends software-properties-common
+RUN apt-get install -y --no-install-recommends lsb-release software-properties-common
 RUN wget https://apt.llvm.org/llvm.sh
 RUN chmod +x llvm.sh
 RUN ./llvm.sh 13 all
-
 
 # RUN echo "deb http://apt.llvm.org/buster/ llvm-toolchain-buster-13 main" > /etc/apt/sources.list
 # RUN echo "deb-src http://apt.llvm.org/buster/ llvm-toolchain-buster-13 main" > /etc/apt/sources.list
 
 # RUN apt-get update
-
 
 # Add apt.llvm.org repository and install clang
 # RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
@@ -69,8 +66,6 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN npm -g install yarn
-
-
 
 # RUN apt-get install -y wget make tar
 
@@ -137,3 +132,4 @@ RUN yarn install
 EXPOSE 80
 
 ENTRYPOINT yarn prod
+
