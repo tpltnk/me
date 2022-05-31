@@ -21,7 +21,24 @@ impl Component for Root {
       <div class="grid grid-rows-3 h-screen w-screen bg-gray-900">
         <div class="flex h-[1fr] w-screen"></div>
         <div class="flex justify-center items-center h-full w-screen">
-          <p class="text-white text-3xl font-signika">{ "In development. 🌴" }</p>
+
+          /*  after:content-[''] */
+          <p
+            class=r#"
+            text-white
+            text-3xl
+            font-signika
+            inline-block
+            after:block
+            after:border-b-2
+            after:w-0
+            after:duration-150
+            after:ease-out
+            hover:after:w-full
+            "#
+          >
+            { "In development. 🌴" }
+          </p>
         </div>
         <div class="flex flex-row mt-auto justify-between items-center p-7 h-[1fr] w-screen">
           <div class="flex flex-row gap-2">
