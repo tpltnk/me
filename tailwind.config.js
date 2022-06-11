@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'signika': ['"Signika Negative"', 'sans-serif']
-      }
+      },
     },
   },
   plugins: [],

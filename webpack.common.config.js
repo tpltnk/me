@@ -9,10 +9,8 @@ module.exports = (env, argv) => {
   return {
     devServer: {
       contentBase: distPath,
-      disableHostCheck: true,
       host: '0.0.0.0',
       port: 8000,
-      compress: argv.mode === 'production',
     },
     experiments: {
       syncWebAssembly: true,
@@ -48,6 +46,5 @@ module.exports = (env, argv) => {
         extraArgs: "--no-typescript",
       })
     ],
-    watch: argv.mode === 'development'
   };
 };
