@@ -45,9 +45,6 @@ impl Component for Root {
             <a class="text-white" href="https://github.com/tpltnk">
               <span class="fa-xl fa-brands fa-github-square"></span>
             </a>
-            <a class="text-white" href="https://www.youtube.com/channel/UCbu4FIogkvz4UbQ0VjWo7LQ">
-              <span class="fa-xl fa-brands fa-youtube-square"></span>
-            </a>
           </div>
           <div class="flex flex-row gap-2">
             <a class="text-white" href="https://twitter.com/tpltnk">
